@@ -1,0 +1,306 @@
+:root {
+    --primary-bg: linear-gradient(135deg, #0A192F, #172A45, #223F62);
+    --text-color: #ffffff;
+    --card-bg: rgba(255, 255, 255, 0.08);
+    --border-color: rgba(255, 255, 255, 0.15);
+    --accent-color: #5EDEFF;
+    --accent-hover: #00F0FF;
+    --danger-color: #FF6B6B;
+    --input-bg: rgba(255, 255, 255, 0.1);
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --footer-bg: linear-gradient(90deg, #172A45, #0A192F);
+}
+
+body {
+    font-family: var(--font-family);
+    background: var(--primary-bg);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.header-logo {
+    height: 50px;
+    width: auto;
+    display: block;
+}
+
+h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 0;
+    color: var(--accent-color);
+    text-shadow: 0 0 10px rgba(94, 222, 255, 0.3);
+    white-space: nowrap;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 25px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.form-group, .input-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    flex-basis: 100%;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background: var(--input-bg);
+    color: var(--text-color);
+    font-size: 1rem;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+.course-units, .course-grade {
+    text-align: center;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+select option {
+    background: #172A45;
+    color: var(--text-color);
+}
+
+.course-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr auto;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.course-row input, .course-row select {
+    margin: 0;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    color: #0A192F;
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+}
+.btn-primary:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(94, 222, 255, 0.4);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+}
+.btn-secondary:hover {
+    background-color: var(--accent-color);
+    color: #0A192F;
+}
+
+.btn-danger {
+    background-color: transparent;
+    color: var(--danger-color);
+    padding: 8px;
+    font-size: 1.3rem;
+    line-height: 1;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--danger-color);
+}
+.btn-danger:hover {
+    background-color: var(--danger-color);
+    color: white;
+    transform: scale(1.1);
+}
+
+#result-display, #history-card {
+    display: none;
+}
+
+.result-box {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 20px 0;
+    color: var(--accent-color);
+}
+.result-box span {
+    font-size: 2.8rem;
+}
+.classification-comment {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-top: 15px;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 14px 10px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th:nth-child(3), td:nth-child(3) {
+    text-align: center;
+}
+
+th {
+    font-weight: 700;
+    color: var(--accent-color);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+td {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+td input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: var(--accent-color);
+}
+
+footer {
+    background: var(--footer-bg);
+    width: 100%;
+    margin-top: 50px;
+    padding: 20px;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-logo {
+    height: 25px;
+    width: auto;
+    vertical-align: middle;
+}
+
+.contact-info {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.contact-item a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-item a:hover {
+    color: var(--accent-color);
+}
+
+.contact-item i {
+    color: var(--accent-color);
+    font-size: 1.1em;
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 2.2rem; white-space: normal; }
+    h2 { font-size: 1.5rem; }
+    .card { padding: 20px; }
+    .course-row { grid-template-columns: 1fr; }
+    .btn-danger { grid-row: auto; width: 100%; margin-top: 10px; }
+    button { width: 100%; margin-bottom: 10px; }
+    .input-group { flex-direction: column; }
+    header { flex-direction: column; gap: 10px; }
+    .header-logo { height: 40px; }
+    footer { padding: 15px; gap: 10px; }
+    .footer-content { flex-direction: column; gap: 5px; }
+    .contact-info { flex-direction: column; gap: 10px; }
+}

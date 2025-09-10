@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jayworks CGPA Calculator</title>
+    
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="icon" href="https://r.resimlink.com/dD9wSg.png" type="image/png">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Jayworks CGPA Calculator</h1>
+        </header>
+
+        <main>
+            <div class="card">
+                <h2>Settings</h2>
+                <div class="form-group">
+                    <label for="grading-scale">Select Grading Scale</label>
+                    <select id="grading-scale">
+                        <option value="4.0">4.0 Scale</option>
+                        <option value="5.0" selected>5.0 Scale</option>
+                        <option value="7.0">7.0 Scale</option>
+                        <option value="10.0">10.0 Scale</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Enter Semester Courses</h2>
+                <div id="courses-container">
+                    <div class="course-row">
+                        <input type="text" placeholder="Course Code (e.g. GST101)" class="course-code">
+                        <input type="number" placeholder="Credit Units" class="course-units" min="0">
+                        <select class="course-grade"></select>
+                        <button class="btn-danger" onclick="removeCourse(this)" style="display:none;">&times;</button>
+                    </div>
+                </div>
+                <div class="form-group" style="margin-top: 20px;">
+                    <button class="btn-secondary" onclick="addCourse()">Add Course</button>
+                    <button class="btn-primary" onclick="calculateGPA()">Calculate GPA</button>
+                </div>
+            </div>
+            
+            <div class="card" id="result-display">
+                <h2>Semester Result</h2>
+                <div class="result-box">
+                    Your Semester GPA is: <br><span id="gpa-result">0.00</span>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="semester-name" placeholder="Enter Semester Name (e.g. Y1-Fall)">
+                    <button class="btn-primary" onclick="storeResult()">Store Semester Result</button>
+                </div>
+            </div>
+            
+            <div class="card" id="history-card">
+                 <h2>Semester CGPA History</h2>
+                 <p>Select two or more semesters below to visualize your progress.</p>
+                 <table id="history-table">
+                    <thead>
+                        <tr>
+                            <th>Select</th>
+                            <th>Semester Name</th>
+                            <th>GPA</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        </tbody>
+                </table>
+                <div class="result-box" style="margin-top: 30px;">
+                    Overall CGPA: <br><span id="cgpa-result">0.00</span>
+                    <p id="cgpa-comment" class="classification-comment"></p>
+                </div>
+                <div>
+                    <canvas id="cgpa-chart"></canvas>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <p>Developed for humanity by Olumide Jasanya</p>
+            </div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:olumidejasanya@gmail.com">olumidejasanya@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>+2347056127752</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <a href="https://www.linkedin.com/in/olumide-jasanya/" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <script src="script.js"></script>
+</body>
+</html>
